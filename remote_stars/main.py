@@ -78,19 +78,18 @@ if __name__ == "__main__":
                 images.append((im, dist))
             else:
                 images.append((im, None))
-
-    for k, img in enumerate(images):
-        plt.subplot(2, 5, k+1)
-
-        if img[1] is not None:
-            plt.title(f"Dist: {img[1]:.1f}")
-        else:
-            plt.title(f"Dist: None")
-
-        plt.imshow(img[0])
-        print(f"Изображение: {k+1}, расстояние: {img[1]:.1f} ")
-    plt.show()
-
     with open("data.txt", "w") as f:
         for k, img in enumerate(images):
-            f.write(f"Изображение: {k+1}, расстояние: {img[1]:.1f}\n")
+            plt.subplot(2, 5, k+1)
+
+            if img[1] is not None:
+                plt.title(f"Dist: {img[1]:.1f}")
+                f.write(f"Изображение: {k+1}, расстояние: {img[1]:.1f}\n")
+                print(f"Изображение: {k+1}, расстояние: {img[1]:.1f} ")
+            else:
+                plt.title(f"Dist: None")
+                f.write(f"Изображение: {k+1}, расстояние: None\n")
+                print(f"Изображение: {k+1}, расстояние: None ")
+
+            plt.imshow(img[0])
+    plt.show()
