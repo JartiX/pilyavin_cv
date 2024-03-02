@@ -65,6 +65,7 @@ def find_dist(dot1: tuple, dot2: tuple) -> int:
 
 if __name__ == "__main__":
     images = []
+    dist = ""
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         sock.connect((host, port))
         for i in range(10):
@@ -78,6 +79,10 @@ if __name__ == "__main__":
                 images.append((im, dist))
             else:
                 images.append((im, None))
+
+            sock.send(f"{dist:.1f}".encode())
+            print(sock.recv(20))
+
     with open("data.txt", "w") as f:
         for k, img in enumerate(images):
             plt.subplot(2, 5, k+1)
