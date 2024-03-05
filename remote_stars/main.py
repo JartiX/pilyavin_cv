@@ -82,6 +82,9 @@ if __name__ == "__main__":
 
             sock.send(f"{dist:.1f}".encode())
             print(sock.recv(20))
+        
+        sock.send(b'beat')
+        print(sock.recv(20))
 
     with open("data.txt", "w") as f:
         for k, img in enumerate(images):
