@@ -3,7 +3,7 @@ from skimage.morphology import binary_closing, binary_dilation, binary_opening, 
 import matplotlib.pyplot as plt
 import numpy as np
 
-image = np.load('wires6npy.txt')
+image = np.load('wires5npy.txt')
 
 labeled_image = label(image)
 arr = []
@@ -27,5 +27,5 @@ for i in range(len(arr)):
 plt.subplot(121)
 plt.imshow(image)
 plt.subplot(122)
-plt.imshow(img1)
+plt.imshow(labeled_image)
 plt.show()
