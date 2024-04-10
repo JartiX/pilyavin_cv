@@ -22,3 +22,18 @@ for i in range(1, 13):
         
     print(f"On the picture {i} {pencils} pencils")   
 print(f"{all_pencils} on the all pictures") 
+
+## OUTPUT
+# On the picture 1 0 pencils
+# On the picture 2 1 pencils
+# On the picture 3 1 pencils
+# On the picture 4 2 pencils
+# On the picture 5 2 pencils
+# On the picture 6 3 pencils
+# On the picture 7 3 pencils
+# On the picture 8 1 pencils
+# On the picture 9 2 pencils
+# On the picture 10 2 pencils
+# On the picture 11 3 pencils
+# On the picture 12 1 pencils
+# 21 on the all pictures
