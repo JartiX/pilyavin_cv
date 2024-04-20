@@ -22,8 +22,8 @@ for i in range(1, num_of_labels):
         else:
             colors_circle [key] += 1
 
-print(f"Circles:{colors_circle}")
-print(f"Rectangles:{colors_rect}")   
+print(f"Circles: {colors_circle}")
+print(f"Rectangles: {colors_rect}")   
 print(f"Number of circles: {sum(colors_circle.values())}") 
 print(f"Number of rectangles: {sum(colors_rect.values())}") 
 
