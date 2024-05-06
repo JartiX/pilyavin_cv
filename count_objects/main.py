@@ -18,7 +18,6 @@ socket.connect(f"tcp://{ip}:{port}")
 
 n = 0
 while True:
-
     bts = socket.recv()
     n += 1
     arr = np.frombuffer(bts, np.uint8)
@@ -66,7 +65,6 @@ while True:
     cv2.putText(image, f"Image: {n}", (10, 30), cv2.FONT_HERSHEY_COMPLEX, 0.7, (127, 0, 255))
     cv2.putText(image, f"Cubes: {cubes}, Balls: {balls}", (10, 60), cv2.FONT_HERSHEY_COMPLEX, 0.7, (127, 0, 255))
     cv2.putText(image, f"Objects: {num_objects}", (10, 90), cv2.FONT_HERSHEY_COMPLEX, 0.7, (127, 0, 255))
-    cv2.putText(segments, f"Objects: {len(contours)}", (10, 90), cv2.FONT_HERSHEY_COMPLEX, 0.7, (127, 0, 255))
     cv2.imshow("Image", image.astype("uint8"))
     cv2.imshow("Image1", segments.astype("uint8"))
 
