@@ -15,7 +15,7 @@ while True:
     ret, img = camera.read()
         
     # Загрузка изображения доски с помощью OpenCV
-    # img = cv2.imread("kakaton/chet.jpg)
+    # img = cv2.imread("chet.jpg)
     # gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     imghsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
