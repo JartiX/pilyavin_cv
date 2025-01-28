@@ -6,14 +6,20 @@ import math
 
 pygame.init()
 
-camera = cv2.VideoCapture(1 + cv2.CAP_DSHOW) 
+camera = cv2.VideoCapture(1 + cv2.CAP_DSHOW)
+if not camera.isOpened():
+    print("Failed to open camera")
+     
 cv2.namedWindow("Image", cv2.WINDOW_GUI_NORMAL)
 
 roi = None
 
 while True:
     ret, img = camera.read()
-        
+    if not ret:
+        print("Failed to capture image")
+        continue
+    
     # Загрузка изображения доски с помощью OpenCV
     # img = cv2.imread("chet.jpg)
     # gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -30,7 +36,7 @@ while True:
     for cnt in cnts:
         rect = cv2.minAreaRect(cnt)
         box = cv2.boxPoints(rect)
-        box = np.int0(box)
+        box = np.int32(box)
         cv2.drawContours(mask, [box], 0, (255), -1)
 
 
