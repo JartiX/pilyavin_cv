@@ -42,3 +42,6 @@
 
 - **Wires**  
   Detect and count the number of cuts in wires.  
+
+- **Texture on cube**
+- Draw texture on cube and normalizing it with gamma
